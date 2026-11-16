@@ -1,0 +1,21 @@
+file(GLOB_RECURSE ENGINE_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/Source/*.cpp"
+)
+file(GLOB_RECURSE ENGINE_HEADERS CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/Include/*.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Include/*.hpp"
+)
+
+add_library(Engine STATIC ${ENGINE_SOURCES} ${ENGINE_HEADERS})
+
+# PUBLIC = anything that links Engine also gets this include path
+target_include_directories(Engine
+    PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}/Include
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source
+)
+
+
+
+# Third-party libraries go here later, for example:
+# add_subdirectory(Extern/glfw)
+# target_link_libraries(Engine PUBLIC glfw)
