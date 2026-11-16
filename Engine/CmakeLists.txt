@@ -1,3 +1,5 @@
+include(${CMAKE_CURRENT_SOURCE_DIR}/Dependencies.cmake)
+
 file(GLOB_RECURSE ENGINE_SOURCES CONFIGURE_DEPENDS
     "${CMAKE_CURRENT_SOURCE_DIR}/Source/*.cpp"
 )
@@ -14,7 +16,16 @@ target_include_directories(Engine
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/Source
 )
 
+target_link_libraries(Engine PUBLIC
+    glfw
+    glm::glm
+    volk
+    vk-bootstrap::vk-bootstrap
+    GPUOpen::VulkanMemoryAllocator
+    miniaudio
+    imgui)
 
+target_compile_definitions(Engine PUBLIC GLFW_INCLUDE_NONE)
 
 # Third-party libraries go here later, for example:
 # add_subdirectory(Extern/glfw)

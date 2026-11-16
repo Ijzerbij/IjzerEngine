@@ -5,6 +5,6 @@
 
 int main()
 {
-	Engine::Engine myEngine;
+	Eng::Engine myEngine;
 	return 0;
 }

@@ -16,3 +16,10 @@ add_custom_command(TARGET Voxels POST_BUILD
         ${CMAKE_SOURCE_DIR}/Engine/Assets
         $<TARGET_FILE_DIR:Voxels>/Assets
 )
+
+if (MSVC)
+    target_link_options(Voxels PRIVATE
+        $<$<CONFIG:Release>:/SUBSYSTEM:WINDOWS>
+        $<$<CONFIG:Release>:/ENTRY:mainCRTStartup>
+    )
+endif()
