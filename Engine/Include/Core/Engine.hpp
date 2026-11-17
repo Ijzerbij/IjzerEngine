@@ -1,4 +1,7 @@
 #pragma once
+
+#include "Core/Common.hpp"
+
 namespace Eng 
 {
 	class Engine
@@ -7,7 +10,7 @@ namespace Eng
 		Engine();
 		~Engine();
 
-		void Update();
+		void Update(deltaTime dt);
 	private:
 	};
 }

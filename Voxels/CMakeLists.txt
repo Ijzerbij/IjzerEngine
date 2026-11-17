@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable (Voxels "Voxels.cpp" "Voxels.h")
+add_executable (Voxels "Voxels.cpp" "Voxels.hpp")
 
 target_link_libraries(Voxels PRIVATE Engine)
 
