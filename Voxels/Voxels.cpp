@@ -1,6 +1,7 @@
 ﻿#include "Voxels.hpp"
 
 #include <chrono>
+#include <iostream>
 
 int main()
 {
@@ -11,7 +12,11 @@ int main()
 	// now start up the engine
 	Eng::Engine myEngine;
 
+	int screenId = 1;
+	myEngine.InitScreen(screenId);
+
 	// now lets make the game ready
+
 
 	// now lets run the game loop
 	while (true)
