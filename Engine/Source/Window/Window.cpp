@@ -1,16 +1,21 @@
 #include "Window/Window.hpp"
 
+#include "Core/Logging.hpp"
+
 #include <iostream>
 
 namespace Eng
 {
 	namespace GLFW // GLFW global window functions
 	{
-		std::string glfwErrorString()
+		void glfwErrorString()
 		{
 			const char* desc = nullptr;
 			int code = glfwGetError(&desc);
-			return "GLFW error " + std::to_string(code) + ": " + (desc ? desc : "unknown");
+			std::string error = "GLFW error " + std::to_string(code) + ": " + (desc ? desc : "unknown");
+			std::cout << error << std::endl;
+			Eng::logger::LogCritticalError(Eng::logger::window, 0);
+			return;
 		}
 	}
 

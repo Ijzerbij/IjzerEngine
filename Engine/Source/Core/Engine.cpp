@@ -15,11 +15,7 @@ namespace Eng
 	{
 		std::cout << "Engine be runnin no more" << std::endl;
 	}
-	void Engine::Update(deltaTime dt)
-	{
-		//std::cout << dt << std::endl;
-	}
-
+	
 	void Engine::InitScreen(int screenId)
 	{
 		if (m_WindowMap.contains(screenId))
@@ -31,6 +27,11 @@ namespace Eng
 		m_WindowMap.try_emplace(screenId);
 
 		return;
+	}
+
+	void Engine::Update(deltaTime dt)
+	{
+		//std::cout << dt << std::endl;
 	}
 }
 

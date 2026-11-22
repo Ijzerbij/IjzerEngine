@@ -11,7 +11,7 @@ namespace Eng
 	{
 		static int g_glfwRefCount = 0;
 
-		std::string glfwErrorString();
+		void glfwErrorString();
 	}
 
 	class Window
