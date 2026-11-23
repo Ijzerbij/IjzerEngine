@@ -13,6 +13,7 @@ namespace Eng
 
 	Engine::~Engine()
 	{
+		m_WindowMap.clear();
 		std::cout << "Engine be runnin no more" << std::endl;
 	}
 	
@@ -25,6 +26,8 @@ namespace Eng
 			return;
 		}
 		m_WindowMap.try_emplace(screenId);
+
+		m_WindowMap.at(screenId);
 
 		return;
 	}
